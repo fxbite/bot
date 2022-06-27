@@ -14,7 +14,7 @@ app.post('/control', async(req, res, next) => {
     try {
         const {url} = req.body
 
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.setDefaultNavigationTimeout(0)
         await page.goto(url, {waitUntil: 'load', timeout: 0});
