@@ -19,8 +19,8 @@ class ControlControllers {
            console.log(process.env.URL_NGROK);
 
             await Promise.all([
-               armyBot.createArmy(websiteTarget, 25, numberDos),
-               armyBot.createArmy(websiteTarget, 25, numberDos),
+               armyBot.createArmy(websiteTarget, 2, numberDos),
+               armyBot.createArmy(websiteTarget, 2, numberDos),
             ])
             
             const response = await axios({
